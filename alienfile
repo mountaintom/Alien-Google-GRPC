@@ -10,7 +10,6 @@ probe sub {
   return 'share';
 };
 
-
 share {
 
   download [ 'git clone -b $(curl -L http://grpc.io/release) https://github.com/grpc/grpc; '
@@ -40,7 +39,6 @@ USE_A_SHELL
     [ 'echo "-L%{.install.prefix}/lib -lgrpc -lgrpc++ -lprotobuf -lpthread"', \'%{.runtime.libs}'    ],
     [ 'echo "-I%{.install.prefix}/include -pthread"', \'%{.runtime.cflags}'    ],
   ];
-
 };
 
 sys {
@@ -50,5 +48,4 @@ sys {
     [ 'pkg-config --libs   grpc grpc++  protobuf', \'%{.runtime.libs}'    ],
   ];
 };
-
 
