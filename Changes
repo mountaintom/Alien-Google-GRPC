@@ -4,3 +4,5 @@
   - Modify Protocol Buffers build to work without a system tool not installed on CPAN Testers machines.
 0.03 2017-07-15
   - Add build tools prereqs checking. Only build if system prereqs are installed.
+0.04_01 2017-07-20
+  - Developer Release: Add auto tools build prereqs from Alien packeges. Add paths to auto tools macros.

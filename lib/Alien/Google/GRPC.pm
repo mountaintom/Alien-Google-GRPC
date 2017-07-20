@@ -96,12 +96,25 @@ At this time only Linux builds are supported.
 
 =cut
 
+=head1 AUTHOR
+
+Tom Stall <stall@cpan.org>
+
+=cut
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2017 by Tom Stall.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
 
 =head1 SEE ALSO
 
 L<Alien>, L<Alien::Base>, L<Alien::Build::Manual::AlienUser>
 
 =cut
-
 
 1;

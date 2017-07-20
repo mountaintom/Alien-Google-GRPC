@@ -1,5 +1,24 @@
 use alienfile;
 
+use Env qw( @PATH @ACLOCAL_PATH );
+
+use  Alien::m4;
+unshift @PATH,  Alien::m4->bin_dir;
+unshift @ACLOCAL_PATH,  Alien::m4->dist_dir . "/share/aclocal";
+
+use Alien::libtool;
+unshift @PATH, Alien::libtool->bin_dir;
+unshift @ACLOCAL_PATH,  Alien::libtool->dist_dir . "/share/aclocal";
+
+use Alien::automake;
+unshift @PATH, Alien::automake->bin_dir;
+unshift @ACLOCAL_PATH,  Alien::automake->dist_dir . "/share/aclocal";
+
+use Alien::autoconf;
+unshift @PATH, Alien::autoconf->bin_dir;
+unshift @ACLOCAL_PATH,  Alien::autoconf->dist_dir . "/share/aclocal";
+unshift @ACLOCAL_PATH,  Alien::autoconf->dist_dir . "/share/autoconf";
+
 probe sub {
   my($build) = @_;  # $build is the Alien::Build instance.
   system 'pkg-config --exists grpc++';
@@ -39,6 +58,7 @@ USE_A_SHELL
     [ 'echo "-L%{.install.prefix}/lib -lgrpc -lgrpc++ -lprotobuf -lpthread"', \'%{.runtime.libs}'    ],
     [ 'echo "-I%{.install.prefix}/include -pthread"', \'%{.runtime.cflags}'    ],
   ];
+
 };
 
 sys {
@@ -48,4 +68,5 @@ sys {
     [ 'pkg-config --libs   grpc grpc++  protobuf', \'%{.runtime.libs}'    ],
   ];
 };
+
 
