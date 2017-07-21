@@ -83,14 +83,12 @@ If a build is needed, it can be lengthy. A half hour or more to compile is not u
 
 The following dependencies need to be installed in order for gRPC to build.
 
- $ [sudo] apt-get install build-essential autoconf libtool
- $ [sudo] apt-get install automake curl
+ $ [sudo] apt-get install build-essential
+ $ [sudo] apt-get install curl
  $ [sudo] apt-get install git
 
 The install information that this module is based on is available here:
 https://github.com/grpc/grpc/blob/master/INSTALL.md
-However, I made some changes so protofbuf would install
-in a non-system location. 
 
 At this time only Linux builds are supported.
 
