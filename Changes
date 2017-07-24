@@ -12,3 +12,5 @@
   - Can now build without auto tools being pre-installed. Additional code enhancements.
 0.06 2017-07-23
   - Hot patch gRPC code so it can build with Linux distributions using gcc7.x.
+9990.06_01 2017-07-24
+  - gRPC is incompatible with latest OpenSSL libraries. Force build to use Google BoringSSL library.

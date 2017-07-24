@@ -47,7 +47,7 @@ share {
     [ 'find . -type f -not -regex ".*\.\(o\|h\|c\|a\|t\|cc\|so\)" -exec sed -i -e "s/-Werror/-Wno-excessive-errors/g" {} \;' ],
     [ 'bash <<"USE_A_SHELL"
         echo "** Build Dir is: "; pwd
-        prefix=%{.install.prefix}  PROTOBUF_CONFIG_OPTS=--prefix=%{.install.prefix} make
+        prefix=%{.install.prefix}  PROTOBUF_CONFIG_OPTS=--prefix=%{.install.prefix} EMBED_OPENSSL=true make
         prefix=%{.install.prefix} make install
         cd ./third_party/protobuf
         make install
